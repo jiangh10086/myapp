@@ -1,0 +1,31 @@
+<html lang="en" style="font-size: 100px;">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" charset="UTF-8" src="//res.cdn.openinstall.io/openinstall.js"></script>
+</head>
+<body  >
+ 
+<script>
+    var data = OpenInstall.parseUrlParams();
+    var openInstallReady = false;
+    var openInstall = new OpenInstall({
+        appKey : "sjqup3", 
+        onready : function() {
+            openInstallReady = true;
+            var m = this;
+            m.schemeWakeup();
+            
+        }
+    }, data);
+     
+    function changePage() {
+        if (openInstallReady){
+            openInstall.wakeupOrInstall();
+        }else{
+            alert(1)
+            window.location.href = 'https://apps.apple.com/cn/app/id1492036493';
+        }
+    }
+    setTimeout(function(){
+        changePage()
+    },5000)
+</script> 
