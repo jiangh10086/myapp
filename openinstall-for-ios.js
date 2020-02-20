@@ -1,5 +1,6 @@
 var iosOpeninstallKey = "g2d1kx";
-var isIosClient = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+var userAgent = navigator.userAgent;
+var isIosClient = !!userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
 var openinstallForIosIsReady = false;
 var openinstallForIos = null;
 if (isIosClient){
